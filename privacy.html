@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - GlowUp Logic</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1b1f24; --muted:#5b6570; --line:#dfe3e8; --link:#0b5cad; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14181d; --fg:#e6e9ed; --muted:#9aa4af; --line:#2c333b; --link:#6db3f2; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  header, main, footer { max-width:44rem; margin:0 auto; padding:0 16px; }
+  header { padding-top:20px; padding-bottom:12px; border-bottom:1px solid var(--line); display:flex; gap:20px; flex-wrap:wrap; align-items:baseline; }
+  header .brand { font-weight:700; color:var(--fg); text-decoration:none; margin-right:auto; }
+  a { color:var(--link); }
+  h1 { font-size:1.9rem; line-height:1.2; margin:1.4em 0 .4em; }
+  h2 { font-size:1.25rem; margin:1.8em 0 .3em; }
+  p, li { margin:.6em 0; }
+  ul { padding-left:1.3em; }
+  footer { color:var(--muted); font-size:.9rem; padding-top:16px; padding-bottom:32px; margin-top:2.5em; border-top:1px solid var(--line); }
+  table { border-collapse:collapse; width:100%; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html">GlowUp Logic</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="security.html">Security</a>
+</header>
+<main>
+<h1>GlowUp Logic Privacy Policy</h1>
+<p>Effective 2026-10-26. This is the public version.</p>
+<p>GlowUp Logic is software that helps therapy and home-health clinics build schedules, bill insurance, and plan their cash. This page says what we collect, why, who sees it, and how you can control it. We wrote it to be read.</p>
+<h2>Who we are</h2>
+<p>GlowUp Logic ("we") is run by Adam Silver, Founder. Contact for anything in this policy: <strong><a href="mailto:adam@silverpeak-consulting.com">adam@silverpeak-consulting.com</a></strong>.</p>
+<h2>What we collect</h2>
+<p>We collect data <strong>from our customers, who are clinics.</strong> We do not collect data from the general public and we do not run ads or trackers.</p>
+<ul>
+<li><strong>Account data.</strong> Names, work emails, and roles of the clinic's staff who use the product. Passwords are stored only as salted hashes.</li>
+<li><strong>Clinic operations data.</strong> Schedules, staff availability, clients' appointments and insurance authorizations, claims, and payments. Some of this is protected health information (PHI). We handle it for the clinic as its service provider, under a business associate agreement (BAA) where the law requires one. We use it only to run the clinic's service.</li>
+<li><strong>Bank data, if the clinic owner links a bank.</strong> Through Plaid we read the <strong>account name and type, balances, and transactions</strong> (up to 730 days back, about two years) for the business account the owner picks. We use this to build the clinic's cash plan. We never see or store the bank password. The link is <strong>read-only</strong>: we cannot move money.</li>
+</ul>
+<h2>How a bank link works, and your consent</h2>
+<p>Only a clinic <strong>owner or administrator</strong> can link a bank. Patients and clients never see this step. The owner opens a Plaid Link page, chooses their bank, signs in on the bank's own screens, and picks the account. We record who agreed and when.</p>
+<p><strong>By linking, you agree to Plaid's End User Privacy Policy</strong> (<a href="https://plaid.com/legal/#end-user-privacy-policy">https://plaid.com/legal/#end-user-privacy-policy</a>). Plaid handles your bank sign-in and shares the data above with us.</p>
+<p><strong>To stop it:</strong> tell us at the contact above, and we disconnect the link and delete the data as described below. You can also remove our access at your bank or at <a href="https://my.plaid.com">https://my.plaid.com</a>.</p>
+<h2>Why we use it</h2>
+<ul>
+<li>To run schedules, billing, and the cash plan for the clinic that signed up.</li>
+<li>To keep the product safe and fix problems.</li>
+<li>We <strong>do not sell</strong> data. We <strong>do not use</strong> bank data or PHI for advertising. We will not use customer data to train AI models.</li>
+</ul>
+<h2>Who we share it with</h2>
+<p>Only the helpers we need, and only what each needs:</p>
+<ul>
+<li><strong>Plaid</strong>, for the bank link.</li>
+<li><strong>Availity</strong>, for checking insurance and sending claims, for the clinic that asks us to.</li>
+<li><strong>Our hosting provider</strong>, which stores the data and runs the product.</li>
+<li><strong>An AI service (Anthropic)</strong>, only if a clinic turns on the optional payment-statement reader. A business associate agreement with that vendor is signed before any clinic turns the feature on. It receives only paper statements that a clinic uploads as images. <strong>Bank data from Plaid is never sent to any AI vendor.</strong></li>
+</ul>
+<p>We share data with the authorities only if the law requires it.</p>
+<h2>How long we keep it</h2>
+<p>Full detail is in our Data Retention and Deletion Policy. In short:</p>
+<ul>
+<li><strong>Bank data:</strong> kept while the link is active, with up to 24 months of history. When a link ends, the access token is deleted immediately and the stored bank data within 30 days.</li>
+<li><strong>Health and billing records:</strong> kept at least 7 years, because the law asks clinics to keep records.</li>
+</ul>
+<h2>How we protect it</h2>
+<ul>
+<li>Each clinic's data is walled off from every other clinic's in the database.</li>
+<li>Staff roles limit who sees what. Administrators must use a second factor (an authenticator app) to sign in to admin screens.</li>
+<li>Connections to Plaid use HTTPS. Bank access keys are kept out of our code and database.</li>
+<li>Every change is recorded in an audit trail.</li>
+<li>Application-level encryption of Plaid access tokens is in progress, due 2026-10-31.</li>
+</ul>
+<p>No system is perfect. If your data is exposed, we tell the affected clinic and Plaid within 72 hours of confirming it.</p>
+<p>See our <a href="security.html">Security overview</a>.</p>
+<h2>Your choices</h2>
+<p>A clinic can ask to see, export, correct, or delete its data, or to disconnect a bank, at any time. We answer within 10 business days. People who are clients of a clinic should ask the clinic first, since the clinic controls their records.</p>
+<h2>Changes</h2>
+<p>If we change this policy in a way that matters, we update the date above and tell clinic owners by email.</p>
+</main>
+<footer>GlowUp Logic &middot; Adam Silver, Founder &middot; <a href="mailto:adam@silverpeak-consulting.com">adam@silverpeak-consulting.com</a></footer>
+</body>
+</html>

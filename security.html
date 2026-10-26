@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security overview - GlowUp Logic</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1b1f24; --muted:#5b6570; --line:#dfe3e8; --link:#0b5cad; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14181d; --fg:#e6e9ed; --muted:#9aa4af; --line:#2c333b; --link:#6db3f2; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  header, main, footer { max-width:44rem; margin:0 auto; padding:0 16px; }
+  header { padding-top:20px; padding-bottom:12px; border-bottom:1px solid var(--line); display:flex; gap:20px; flex-wrap:wrap; align-items:baseline; }
+  header .brand { font-weight:700; color:var(--fg); text-decoration:none; margin-right:auto; }
+  a { color:var(--link); }
+  h1 { font-size:1.9rem; line-height:1.2; margin:1.4em 0 .4em; }
+  h2 { font-size:1.25rem; margin:1.8em 0 .3em; }
+  p, li { margin:.6em 0; }
+  ul { padding-left:1.3em; }
+  footer { color:var(--muted); font-size:.9rem; padding-top:16px; padding-bottom:32px; margin-top:2.5em; border-top:1px solid var(--line); }
+  table { border-collapse:collapse; width:100%; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html">GlowUp Logic</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="security.html">Security</a>
+</header>
+<main>
+<h1>Security overview</h1>
+<p>Effective 2026-10-26. This is a short, honest summary. Where something is still being built, we say so and give a date.</p>
+<h2>What is in place today</h2>
+<ul>
+<li><strong>Customer separation.</strong> Each clinic's data is walled off from every other clinic's inside the database.</li>
+<li><strong>Roles.</strong> People get only the access their job needs. Every change is written to an audit trail with who and when.</li>
+<li><strong>Sign-in.</strong> Passwords are stored only as salted hashes. Administrators must use an authenticator app code as a second step.</li>
+<li><strong>Bank links.</strong> Plaid bank links are read-only and are set up by the clinic owner. We never see the bank password. Bank access keys are kept out of our code and database. Connections to Plaid use HTTPS.</li>
+<li><strong>No real data in development.</strong> Development and testing use made-up data only. Our logs hold IDs, never names or record contents.</li>
+<li><strong>Change control.</strong> Every code change is reviewed in a pull request and runs automated checks. Package updates and known-vulnerability scans run automatically.</li>
+</ul>
+<h2>What we are still doing</h2>
+<ul>
+<li>Application-level encryption of Plaid access tokens: in progress, due 2026-10-31.</li>
+<li>Verified disk encryption and tested backups on the production server: due 2026-11-30.</li>
+<li>Vulnerability scans become blocking in our build: 2026-11-15.</li>
+<li>We do not run a penetration-testing program yet. We will decide on an outside test by 2027-03-31.</li>
+</ul>
+<h2>If something goes wrong</h2>
+<p>We tell affected clinics and Plaid within 72 hours of confirming that their data was exposed.</p>
+<h2>Report a problem</h2>
+<p>Write to Adam Silver, Founder and security owner: <a href="mailto:adam@silverpeak-consulting.com">adam@silverpeak-consulting.com</a>. Please do not include health or bank details in the first message.</p>
+<p>See also the <a href="privacy.html">Privacy Policy</a>.</p>
+</main>
+<footer>GlowUp Logic &middot; Adam Silver, Founder &middot; <a href="mailto:adam@silverpeak-consulting.com">adam@silverpeak-consulting.com</a></footer>
+</body>
+</html>
